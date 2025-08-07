@@ -48,7 +48,7 @@ const Navbar = () => {
           className="navbar-search"
         />
         <button>
-          <span className="text">Button</span>
+          <span className="text">Search</span>
         </button>
       </div>
     </nav>

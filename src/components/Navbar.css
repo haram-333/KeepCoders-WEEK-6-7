@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@500;700&family=Space+Grotesk:wght@400;600&family=Manrope:wght@500;700&display=swap');
+
+.navbar {
+    background: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Grotesk', 'Montserrat', 'Manrope', 'Inter', sans-serif;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-logo {
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Montserrat', 'Space Grotesk', 'Manrope', 'Inter', sans-serif;
+    letter-spacing: -1px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    flex: 1 1 0;
+    justify-content: center;
+    font-family: 'Manrope', 'Space Grotesk', 'Montserrat', 'Inter', sans-serif;
+    transition: all 0.3s;
+}
+
+.navbar-links a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding: 8px 12px;
+    transition: color 0.3s, letter-spacing 0.2s;
+    font-family: inherit;
+    letter-spacing: 0.02em;
+}
+
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #af40ff 0%, #5b42f3 50%, #00ddeb 100%);
+    border-radius: 2px;
+    transition: width 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #5b42f3;
+    letter-spacing: 0.05em;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-search {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Manrope', 'Inter', sans-serif;
+    font-size: 1rem;
+    background: #f7f8fa;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.navbar-search:focus {
+    border: 1.5px solid #5b42f3;
+    box-shadow: 0 0 0 2px #af40ff22;
+    outline: none;
+}
+
+/* Glowing glassmorphism style for the Sign In button */
+button {
+    align-items: center;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 110px;
+    height: 38px; /* Match input and nav height */
+    padding: 0 6px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Space Grotesk', 'Montserrat', 'Manrope', 'Inter', sans-serif;
+    letter-spacing: 0.03em;
+}
+
+button:active,
+button:hover {
+    outline: 0;
+}
+
+button span {
+    background-color: rgb(5, 6, 45);
+    padding: 8px 18px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms;
+    font-size: 1rem;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+}
+
+button:hover span {
+    background: none;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.navbar-badge {
+    background: #ff4757;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 12px;
+    margin-left: 6px;
+    vertical-align: middle;
+    font-family: 'Montserrat', 'Manrope', 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+/* Responsive Styles */
+
+/* --- HAMBURGER BUTTON --- */
+.navbar-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw !important; /* Fixed width for hamburger */
+    height: 32px;
+    background: none;
+    border: none;
+    
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1rem;
+    z-index: 120;
+    transition: background 0.2s;
+    position: relative;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove focus border and box-shadow for hamburger */
+.navbar-hamburger:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove hover/active background for hamburger */
+.navbar-hamburger:hover,
+.navbar-hamburger:active {
+    background: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Hamburger bars style */
+.navbar-hamburger-bar {
+    width: 50px !important; /* Fixed width for hamburger bars */
+    height: 4px;
+    background: linear-gradient(90deg, #af40ff 0%, #5b42f3 50%, #00ddeb 100%);
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: opacity 0.35s cubic-bezier(.77,0,.18,1), background 0.2s;
+    display: block;
+    box-shadow: 0 1px 2px rgba(90,60,180,0.08);
+    position: relative;
+}
+
+/* No hover/active color change for hamburger bars */
+.navbar-hamburger:hover .navbar-hamburger-bar,
+.navbar-hamburger:active .navbar-hamburger-bar,
+.navbar-hamburger.open:hover .navbar-hamburger-bar,
+.navbar-hamburger.open:active .navbar-hamburger-bar {
+    background: linear-gradient(90deg, #af40ff 0%, #5b42f3 50%, #00ddeb 100%);
+}
+
+/* Hamburger open/close animation: fade bars in/out, but keep hamburger shape */
+.navbar-hamburger .navbar-hamburger-bar {
+    opacity: 1;
+    transform: none;
+}
+.navbar-hamburger.open .navbar-hamburger-bar {
+    opacity: 1;
+    transform: none;
+}
+
+/* Optionally, you can add a slight scale or color effect on open if desired
+   but keep the hamburger shape unchanged. */
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet: 900px */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 1rem 1rem;
+    }
+    .navbar-logo {
+        font-size: 1.3rem;
+    }
+    .navbar-links {
+        gap: 1.2rem;
+    }
+    .navbar-actions {
+        gap: 0.5rem;
+    }
+    .navbar-search {
+        font-size: 0.95rem;
+        padding: 5px 8px;
+    }
+    button {
+        min-width: 90px;
+        font-size: 15px;
+        height: 34px;
+    }
+    button span {
+        padding: 7px 12px;
+        font-size: 0.97rem;
+    }
+    .navbar-hamburger {
+        width: 36px; /* Slightly smaller on tablet */
+        height: 28px;
+    }
+    .navbar-hamburger-bar {
+        width: 28px;
+        height: 3.5px;
+    }
+}
+
+/* --- MOBILE NAVIGATION: 700px and below --- */
+@media (max-width: 700px) {
+    .navbar {
+        flex-wrap: nowrap;
+        padding: 0.6rem 0.6rem;
+    }
+    .navbar-logo {
+        font-size: 1.05rem;
+        gap: 0.2rem;
+    }
+    .navbar-actions {
+        gap: 0.2rem;
+    }
+    .navbar-search {
+        font-size: 0.9rem;
+        padding: 4px 6px;
+        min-width: 0;
+        width: 90px;
+    }
+    button {
+        min-width: 70px;
+        font-size: 13px;
+        height: 28px;
+    }
+    button span {
+        padding: 5px 6px;
+        font-size: 0.9rem;
+    }
+
+    /* Hamburger menu appears */
+    .navbar-hamburger {
+        display: flex;
+        width: 40px; /* Fixed width for hamburger on mobile */
+        height: 32px;
+    }
+    .navbar-hamburger-bar {
+        width: 32px; /* Fixed width for hamburger bars on mobile */
+        height: 4px;
+        margin: 3px 0;
+    }
+
+    /* Hide links by default on mobile */
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 75vw;
+        max-width: 340px;
+        background: #fff;
+        box-shadow: 2px 0 16px rgba(0,0,0,0.10);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+        /* Animation for both open and close */
+        transform: translateX(-100%);
+        transition: transform 0.35s cubic-bezier(.77,0,.18,1);
+        z-index: 100;
+        opacity: 0.98;
+        font-size: 1.05rem;
+        display: flex;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    .navbar-links.open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+        box-shadow: 2px 0 24px rgba(0,0,0,0.13);
+        opacity: 1;
+        transition: transform 0.35s cubic-bezier(.77,0,.18,1), opacity 0.2s;
+    }
+    .navbar-links li {
+        width: 100%;
+        margin-bottom: 1.2rem;
+    }
+    .navbar-links li:last-child {
+        margin-bottom: 0;
+    }
+    .navbar-links a {
+        width: 100%;
+        display: block;
+        padding: 12px 0;
+        font-size: 1.08em;
+    }
+    .navbar-actions {
+        margin-left: auto;
+    }
+}
+
+/* Hide hamburger on desktop (above 700px) */
+@media (min-width: 701px) {
+    .navbar-hamburger {
+        display: none !important;
+    }
+    .navbar-links {
+        position: static;
+        height: auto;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        font-size: 1rem;
+        display: flex;
+    }
+}
+
+/* Optional: prevent body scroll when menu is open (add .navbar-menu-open to body via JS if desired) */
+body.navbar-menu-open {
+    overflow: hidden;
+}

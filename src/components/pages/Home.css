@@ -1,0 +1,155 @@
+.home-container {
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(80, 80, 180, 0.10);
+    padding: 40px 32px 32px 32px;
+    font-family: 'Manrope', 'Segoe UI', 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    color: #232946;
+}
+
+.home-container h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    color: #4f46e5;
+    text-shadow: 0 2px 8px rgba(79, 70, 229, 0.08);
+    font-family: 'Space Grotesk', 'Montserrat', 'Manrope', 'Inter', sans-serif;
+    transition: color 0.6s;
+}
+
+.home-container h2 {
+    font-size: 1.3rem;
+    margin-top: 2.2rem;
+    margin-bottom: 0.7rem;
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    font-family: 'Space Grotesk', 'Montserrat', 'Manrope', 'Inter', sans-serif;
+    transition: color 0.6s;
+}
+
+.home-container ul {
+    margin-left: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #3b3b3b;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-family: 'Space Grotesk', 'Montserrat', 'Manrope', 'Inter', sans-serif;
+    transition: color 0.6s;
+}
+
+.home-container p {
+    font-size: 1.13rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+    font-family: inherit;
+    transition: color 0.6s;
+}
+
+/* --- BUTTONS FIXED --- */
+.home-btn {
+    /* Blue to purple gradient for the first button */
+    background: linear-gradient(90deg, #2563eb 0%, #a21caf 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.95rem 2.5rem;
+    font-size: 1.13rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 18px rgba(79, 70, 229, 0.13), 0 1.5px 0 #fff inset;
+    cursor: pointer;
+    transition: 
+        background 0.25s cubic-bezier(.4,0,.2,1),
+        color 0.18s,
+        transform 0.18s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.18s;
+    outline: none;
+    margin: 0 0.3rem 1rem 0.3rem;
+    font-family: 'Space Grotesk', 'Montserrat', 'Manrope', 'Inter', sans-serif;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.home-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(0,221,235,0.18);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(.4,0,.2,1), height 0.3s cubic-bezier(.4,0,.2,1);
+    z-index: 0;
+}
+
+.home-btn:active::after {
+    width: 220%;
+    height: 220%;
+}
+
+.home-btn:hover,
+.home-btn:focus {
+    /* Switch gradient direction on hover */
+    background: linear-gradient(90deg, #a21caf 0%, #2563eb 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.045);
+    box-shadow: 0 6px 24px rgba(79, 70, 229, 0.18), 0 1.5px 0 #fff inset;
+    filter: brightness(1.09) saturate(1.18);
+}
+
+.home-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.10);
+}
+
+/* Removed .home-btn--secondary and its hover/active styles */
+
+.home-container footer {
+    margin-top: 2.5rem;
+    color: #888;
+    font-size: 0.98rem;
+    text-align: center;
+    font-family: inherit;
+    transition: color 0.6s;
+}
+
+.home-container a {
+    color: #4f46e5;
+    text-decoration: underline;
+    transition: color 0.6s;
+    font-family: inherit;
+}
+
+.home-container a:hover {
+    color: #00ddeb;
+    transition: color 0.6s;
+}
+
+@media (max-width: 600px) {
+    .home-container {
+        padding: 18px 6vw 24px 6vw;
+        max-width: 98vw;
+    }
+
+    .home-container h1 {
+        font-size: 2rem;
+    }
+
+    .home-btn {
+        width: 100%;
+        padding: 0.95rem 0;
+        font-size: 1.03rem;
+        margin-bottom: 1rem;
+    }
+
+    .home-container ul {
+        font-size: 0.98rem;
+    }
+}
